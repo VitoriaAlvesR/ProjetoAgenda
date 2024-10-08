@@ -214,6 +214,7 @@
             checkConfirmar.TabIndex = 17;
             checkConfirmar.Text = "Não sou um robô";
             checkConfirmar.UseVisualStyleBackColor = false;
+            checkConfirmar.CheckedChanged += checkConfirmar_CheckedChanged;
             // 
             // Form2
             // 

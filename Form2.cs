@@ -19,7 +19,7 @@ namespace ProjetoAgenda
 
         private void habilitarBotaoCadastrar()
         {
-            if (txtVisorNome.Text.Length > 0 && txtVisorUsuario.Text.Length > 0 && txtTelefone.Text.Length > 0  && txtSenha.Text.Length >= 8 && txtSenha.Text == txtRepitirSenha.Text)
+            if (txtVisorNome.Text.Length > 0 && txtVisorUsuario.Text.Length > 0 && txtTelefone.Text.Length > 0 && txtSenha.Text.Length >= 8 && txtSenha.Text == txtRepitirSenha.Text & checkConfirmar.Checked)
             {
                 bttnCadastrar.Enabled = true;
             }
@@ -59,6 +59,11 @@ namespace ProjetoAgenda
             this.Hide();
             Form1 form1 = new Form1();
             form1.ShowDialog();
+        }
+
+        private void checkConfirmar_CheckedChanged(object sender, EventArgs e)
+        {
+            habilitarBotaoCadastrar();
         }
     }
 }
