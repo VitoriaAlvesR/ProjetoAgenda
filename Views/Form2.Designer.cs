@@ -83,6 +83,7 @@
             txtSenha.Location = new Point(67, 288);
             txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(198, 23);
             txtSenha.TabIndex = 3;
             txtSenha.TextChanged += txtSenha_TextChanged;
@@ -153,6 +154,7 @@
             txtRepitirSenha.Location = new Point(67, 355);
             txtRepitirSenha.Multiline = true;
             txtRepitirSenha.Name = "txtRepitirSenha";
+            txtRepitirSenha.PasswordChar = '*';
             txtRepitirSenha.Size = new Size(198, 23);
             txtRepitirSenha.TabIndex = 9;
             txtRepitirSenha.TextChanged += txtRepitirSenha_TextChanged;
@@ -169,6 +171,7 @@
             bttnCadastrar.TabIndex = 10;
             bttnCadastrar.Text = "Cadastrar";
             bttnCadastrar.UseVisualStyleBackColor = false;
+            bttnCadastrar.Click += bttnCadastrar_Click;
             // 
             // bttnCancelar
             // 

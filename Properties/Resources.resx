@@ -118,19 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="stitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\stitch.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stitch_De_Lado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\Stitch_De_Lado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stitch_Para_Baixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\Stitch_Para_Baixo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Fundo principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\Fundo principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stitch_De_Lado_Novo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\Stitch_De_Lado_Novo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
