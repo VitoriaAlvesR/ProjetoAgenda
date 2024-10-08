@@ -19,7 +19,7 @@ namespace ProjetoAgenda
 
         private void habilitarBotaoCadastrar()
         {
-            if (txtVisorNome.Text.Length > 0 && txtVisorUsuario.Text.Length > 0 && txtTelefone.Text.Length > 0 && txtSenha.Text.Length >= 8 && txtSenha.Text == txtRepitirSenha.Text & checkConfirmar.Checked)
+            if (txtVisorNome.Text.Length > 0 && txtVisorUsuario.Text.Length > 0 && txtTelefone.Text.Length == 11 && txtSenha.Text.Length >= 8 && txtSenha.Text == txtRepitirSenha.Text & checkConfirmar.Checked)
             {
                 bttnCadastrar.Enabled = true;
             }
