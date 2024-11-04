@@ -1,3 +1,5 @@
+using ProjetoAgenda.Controller;
+
 namespace ProjetoAgenda
 {
     public partial class Form1 : Form
@@ -38,6 +40,30 @@ namespace ProjetoAgenda
         }
 
         private void bttnEntrar_Click(object sender, EventArgs e)
+        {
+            UsuarioController controleUsuario = new UsuarioController();
+
+            bool resultado = controleUsuario.LogarUsuario(txtVisorUsuario.Text,txtVisorSenha.Text);
+
+            //Mensagem par teste do comando acima.
+            //MessageBox.Show(resultado.ToString());
+
+            // Autorização de Usuário estar correto ou não
+            if (resultado == true)
+            {
+                MessageBox.Show("Bem-vido a sua tela principal");
+
+                this.Hide();
+                FrmPrincipal form = new FrmPrincipal();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos, tente novamente");
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
