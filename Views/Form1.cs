@@ -1,4 +1,5 @@
 using ProjetoAgenda.Controller;
+using ProjetoAgenda.Views;
 
 namespace ProjetoAgenda
 {
@@ -54,8 +55,8 @@ namespace ProjetoAgenda
                 MessageBox.Show("Bem-vido a sua tela principal");
 
                 this.Hide();
-                FrmPrincipal form = new FrmPrincipal();
-                form.ShowDialog();
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.ShowDialog();
             }
             else
             {

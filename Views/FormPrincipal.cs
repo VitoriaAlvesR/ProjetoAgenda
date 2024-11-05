@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoAgenda
+namespace ProjetoAgenda.Views
 {
-    public partial class FrmPrincipal : Form
+    public partial class FormPrincipal : Form
     {
-        public FrmPrincipal()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
