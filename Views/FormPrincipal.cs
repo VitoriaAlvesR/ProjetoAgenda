@@ -16,5 +16,22 @@ namespace ProjetoAgenda.Views
         {
             InitializeComponent();
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCategoria form = new FormCategoria();
+            form.ShowDialog();
+        }
     }
 }

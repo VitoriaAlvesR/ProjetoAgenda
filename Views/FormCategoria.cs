@@ -1,0 +1,60 @@
+﻿using ProjetoAgenda.Controller;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjetoAgenda.Views
+{
+    public partial class FormCategoria : Form
+    {
+        public FormCategoria()
+        {
+            InitializeComponent();
+        }
+        private void buttCadastrar_Click(object sender, EventArgs e)
+        {
+            //Instanciando o objeto AddCategoria
+            CategoriaController controleCategoria = new CategoriaController();
+
+            //Inserindo a categoria
+            bool resultado = controleCategoria.AddCategoria(textVisor.Text);
+            if (resultado)
+            {
+                MessageBox.Show("Cadastro da categoria efetuado com sucessso");
+
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível cadastrar a categoria.");
+            }
+
+            //Comando para aparecer o dgvCategoria.
+            CategoriaController controle = new CategoriaController();
+
+            DataTable table = controle.GetCategorias();
+
+            dgvCategoria.DataSource = table;
+        }
+
+        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormCategoria_Load(object sender, EventArgs e)
+        {
+            //Comando para aprecer em lista no dgvCategoria
+            CategoriaController controle = new CategoriaController();
+
+            DataTable table = controle.GetCategorias();
+
+            dgvCategoria.DataSource = table;
+        }
+    }
+}
