@@ -36,6 +36,7 @@ namespace ProjetoAgenda.Controller
 
                 //Fechandno conexao
                 conexao.Close();
+
             }
             catch (Exception erro)
             {
