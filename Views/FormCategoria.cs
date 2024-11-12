@@ -47,7 +47,7 @@ namespace ProjetoAgenda.Views
 
         }
 
-        private void FormCategoria_Load(object sender, EventArgs e)
+        private void AtualizaDataGread ()
         {
             //Comando para aprecer em lista no dgvCategoria
             CategoriaController controle = new CategoriaController();
@@ -55,6 +55,21 @@ namespace ProjetoAgenda.Views
             DataTable table = controle.GetCategorias();
 
             dgvCategoria.DataSource = table;
+        }
+
+        private void FormCategoria_Load(object sender, EventArgs e)
+        {
+           AtualizaDataGread();
+        }
+
+        private void bttnExcluir_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvCategoria.SelectedRows[0].Cells[0].Value);
+
+            CategoriaController categoriaController = new CategoriaController();
+            categoriaController.DeleteTable(codigo);
+
+            AtualizaDataGread();
         }
     }
 }

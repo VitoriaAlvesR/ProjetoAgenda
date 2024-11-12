@@ -96,5 +96,51 @@ namespace ProjetoAgenda.Controller
                 conexao.Close();
             }
         }
+
+        public DataTable DeleteTable(int codCatego)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                //Criando a conexão, estou utilizando a classe ConexaoDB que esta dentro da pasta DATA
+                conexao = ConexaoDB.CriarConexao();
+
+                //Comando do SQL que será executado
+                string sql = @"DELETE FROM tbcategoria WHERE codCategoria = @codigo ;";
+
+                //Abrindo a conexão
+                conexao.Open();
+
+                //Comando responsável por estar execultando o comando sql
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                //Troca do valor dado pelos @ pelas informações que serão cadastradas
+                // Essas informações vieram dos parametros da função
+                comando.Parameters.AddWithValue("@codigo", codCatego);
+
+                //Execusão no banco de dados
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                if (linhasAfetadas > 0)
+                {
+                    return new DataTable();
+                }
+                else
+                {
+                    return new DataTable();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao excluir categoria: {erro.Message}");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+
     }
 }
