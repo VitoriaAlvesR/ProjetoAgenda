@@ -18,7 +18,10 @@ namespace ProjetoAgenda.Controller
                 MySqlConnection conexao = ConexaoDB.CriarConexao();
 
                 //Comando SQL que será executado
-                string sql = "INSERT INTO tbUsuarios(nome, usuario, telefone, senha) VALUES(@nome, @usuario, @telefone, @senha);";
+                string sql = "INSERT INTO tbUsuarios(nome, usuario, telefone, senha) VALUES(@nome, @usuario, @telefone, @senha);" +
+                              $"CREATE USER '{usuario}'@'%' IDENTIFIED BY '@senha';" +
+                              $"GRANT ALL PRIVILEGES ON dbagenda.* TO '{usuario}'@'%';" +
+                               "FLUSH PRIVILEGES;";
 
                 //Abrir a conexão com o banco
                 conexao.Open();

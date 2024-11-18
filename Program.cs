@@ -16,7 +16,8 @@ namespace ProjetoAgenda
             //Application.Run(new Form1());
             //Application.Run(new FrmTeste());
             //Application.Run(new FormPrincipal());
-            Application.Run(new FormCategoria());
+            //Application.Run(new FormCategoria());
+            Application.Run(new Form2());   
 
         }
     }
