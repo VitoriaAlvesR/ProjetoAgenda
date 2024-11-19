@@ -120,7 +120,7 @@
             lblTelefone.ForeColor = Color.White;
             lblTelefone.Location = new Point(67, 210);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(53, 15);
+            lblTelefone.Size = new Size(52, 15);
             lblTelefone.TabIndex = 6;
             lblTelefone.Text = "Telefone";
             // 
@@ -223,7 +223,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Fundo_principal;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(439, 511);
             Controls.Add(checkConfirmar);

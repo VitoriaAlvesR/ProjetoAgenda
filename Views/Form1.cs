@@ -1,4 +1,5 @@
 using ProjetoAgenda.Controller;
+using ProjetoAgenda.VariableGlobal;
 using ProjetoAgenda.Views;
 
 namespace ProjetoAgenda
@@ -62,6 +63,11 @@ namespace ProjetoAgenda
             {
                 MessageBox.Show("Usuário ou senha incorretos, tente novamente");
             }
+
+            UserSession.senha = txtVisorSenha.Text;
+            UserSession.nome = txtVisorUsuario.Text;
+            UserSession.usuario = txtVisorUsuario.Text; 
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

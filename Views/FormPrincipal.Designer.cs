@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             menuStrip1 = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -83,7 +84,7 @@
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem });
             cadastroToolStripMenuItem.ForeColor = Color.White;
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(180, 22);
+            cadastroToolStripMenuItem.Size = new Size(121, 22);
             cadastroToolStripMenuItem.Text = "&Cadastro";
             // 
             // categoriaToolStripMenuItem
@@ -91,7 +92,7 @@
             categoriaToolStripMenuItem.BackColor = Color.Black;
             categoriaToolStripMenuItem.ForeColor = Color.White;
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(180, 22);
+            categoriaToolStripMenuItem.Size = new Size(125, 22);
             categoriaToolStripMenuItem.Text = "Ca&tegoria";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
@@ -99,7 +100,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Fundo_principal;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);

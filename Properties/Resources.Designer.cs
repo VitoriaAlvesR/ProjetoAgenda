@@ -59,15 +59,5 @@ namespace ProjetoAgenda.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fundo_principal {
-            get {
-                object obj = ResourceManager.GetObject("Fundo principal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

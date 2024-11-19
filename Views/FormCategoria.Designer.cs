@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             grpCategoria = new GroupBox();
+            bttnExcluir = new Button();
             buttCadastrar = new Button();
             textVisor = new TextBox();
             dgvCategoria = new DataGridView();
             grpbAlterarSenha = new GroupBox();
-            txtVisorNovaSenha = new TextBox();
             bttnAleteraSenha = new Button();
-            bttnExcluir = new Button();
+            txtVisorNovaSenha = new TextBox();
             grpCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             grpbAlterarSenha.SuspendLayout();
@@ -43,7 +44,6 @@
             // 
             // grpCategoria
             // 
-            grpCategoria.BackgroundImage = Properties.Resources.Fundo_principal;
             grpCategoria.BackgroundImageLayout = ImageLayout.Stretch;
             grpCategoria.Controls.Add(bttnExcluir);
             grpCategoria.Controls.Add(buttCadastrar);
@@ -55,6 +55,19 @@
             grpCategoria.TabIndex = 0;
             grpCategoria.TabStop = false;
             grpCategoria.Text = "Insira o nome da nova categoria";
+            // 
+            // bttnExcluir
+            // 
+            bttnExcluir.BackColor = Color.Blue;
+            bttnExcluir.BackgroundImageLayout = ImageLayout.Center;
+            bttnExcluir.FlatStyle = FlatStyle.Flat;
+            bttnExcluir.Location = new Point(6, 103);
+            bttnExcluir.Name = "bttnExcluir";
+            bttnExcluir.Size = new Size(264, 26);
+            bttnExcluir.TabIndex = 2;
+            bttnExcluir.Text = "Excluir";
+            bttnExcluir.UseVisualStyleBackColor = false;
+            bttnExcluir.Click += bttnExcluir_Click;
             // 
             // buttCadastrar
             // 
@@ -82,7 +95,9 @@
             // 
             // dgvCategoria
             // 
+            dgvCategoria.BackgroundColor = Color.Black;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategoria.GridColor = Color.Black;
             dgvCategoria.Location = new Point(354, 12);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -102,14 +117,6 @@
             grpbAlterarSenha.TabStop = false;
             grpbAlterarSenha.Text = "Alterar Senha";
             // 
-            // txtVisorNovaSenha
-            // 
-            txtVisorNovaSenha.Location = new Point(14, 29);
-            txtVisorNovaSenha.Multiline = true;
-            txtVisorNovaSenha.Name = "txtVisorNovaSenha";
-            txtVisorNovaSenha.Size = new Size(262, 27);
-            txtVisorNovaSenha.TabIndex = 0;
-            // 
             // bttnAleteraSenha
             // 
             bttnAleteraSenha.BackColor = Color.Blue;
@@ -122,24 +129,20 @@
             bttnAleteraSenha.Text = "Alterar Senha";
             bttnAleteraSenha.UseVisualStyleBackColor = false;
             // 
-            // bttnExcluir
+            // txtVisorNovaSenha
             // 
-            bttnExcluir.BackColor = Color.Blue;
-            bttnExcluir.BackgroundImageLayout = ImageLayout.Center;
-            bttnExcluir.FlatStyle = FlatStyle.Flat;
-            bttnExcluir.Location = new Point(6, 103);
-            bttnExcluir.Name = "bttnExcluir";
-            bttnExcluir.Size = new Size(264, 26);
-            bttnExcluir.TabIndex = 2;
-            bttnExcluir.Text = "Excluir";
-            bttnExcluir.UseVisualStyleBackColor = false;
-            bttnExcluir.Click += bttnExcluir_Click;
+            txtVisorNovaSenha.Location = new Point(14, 29);
+            txtVisorNovaSenha.Multiline = true;
+            txtVisorNovaSenha.Name = "txtVisorNovaSenha";
+            txtVisorNovaSenha.Size = new Size(262, 27);
+            txtVisorNovaSenha.TabIndex = 0;
             // 
             // FormCategoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1013, 172);
             Controls.Add(grpbAlterarSenha);

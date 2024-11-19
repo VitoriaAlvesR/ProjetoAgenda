@@ -7,3 +7,4 @@ CREATE TABLE tbUsuarios (
     telefone VARCHAR(15),
     senha VARCHAR(20) NOT NULL
     );
+
