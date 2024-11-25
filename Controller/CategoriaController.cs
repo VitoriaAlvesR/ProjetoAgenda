@@ -11,7 +11,7 @@ namespace ProjetoAgenda.Controller
 {
     internal class CategoriaController
     {
-        public bool AddCategoria(string nome)
+        public bool AddCategoria(string nomeCatego)
         {
             MySqlConnection conexao = null;
             try
@@ -20,7 +20,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando do SQL que será executado
-                string sql = "INSERT INTO tbCategoria (nome) VALUES (@nome);";
+                string sql = "INSERT INTO tbCategoria (nomeCatego) VALUES (@nomeCatego);";
 
                 //Abrindo a conexão
                 conexao.Open();
@@ -30,7 +30,7 @@ namespace ProjetoAgenda.Controller
 
                 //Troca do valor dado pelos @ pelas informações que serão cadastradas
                 // Essas informações vieram dos parametros da função
-                comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@nomeCatego", nomeCatego);
 
                 //Execusão no banco de dados
                 int linhasAfetadas = comando.ExecuteNonQuery();
@@ -67,7 +67,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //SELECT - Retornar os dados.
-                string sql = "SELECT codCategoria AS 'Código', nome AS 'Categoria' FROM tbCategoria;";
+                string sql = "SELECT codCategoria AS 'Código', nomeCatego AS 'Categoria' FROM tbCategoria;";
 
                 //Abrindo Conexão.
                 conexao.Open();
@@ -106,7 +106,35 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando do SQL que será executado
-                string sql = @"DELETE FROM tbcategoria WHERE codCategoria = @codigo ;";
+                string sql = @"CREATE TABLE logUsuario ( 
+	                        logID INT AUTO_INCREMENT PRIMARY KEY ,
+                            usuario VARCHAR (40) NOT NULL,
+                            horario DATETIME NOT NULL,
+                            descricao VARCHAR (80)
+                            );
+
+                            DELIMITER //
+                            CREATE TRIGGER trLogDeleteCategoria
+                            AFTER DELETE ON tbCategoria
+                            FOR EACH ROW
+                            BEGIN 
+	                            INSERT INTO logUsuario
+                                (
+                                usuario,
+                                horario,
+                                descricao
+                                )
+    
+                                VALUES
+                                (
+		                            USER(),
+                                    current_timestamp(),
+                                    CONCAT('A categoria', OLD.codCategoria,'foi excluida')
+                                );
+    
+                            END;
+                            //
+                            DELIMITER ;";
 
                 //Abrindo a conexão
                 conexao.Open();
@@ -141,6 +169,62 @@ namespace ProjetoAgenda.Controller
             }
         }
 
+        public DataTable AlterarTable (int codCatego)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+                string sql =@"DELIMITER //
+                            CREATE TRIGGER trLogUpdateCategoria
+                            AFTER UPDATE  ON tbCategoria
+                            FOR EACH ROW
+                            BEGIN 
+	                            INSERT INTO logUsuario
+                                (
+                                usuario,
+                                horario,
+                                descricao
+                                )
+    
+                                VALUES
+                                (
+		                            USER(),
+                                    current_timestamp(),
+                                    CONCAT('A categoria', OLD.codCategoria,'foi alterada para', NEW.codCategoria)
+                                );
+    
+                            END;
+                            //
+                            DELIMITER ; ";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@codigo", codCatego);
+
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                if (linhasAfetadas > 0)
+                {
+                    return new DataTable();
+                }
+                else
+                {
+                    return new DataTable();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao excluir categoria: {erro.Message}");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
 
     }
 }

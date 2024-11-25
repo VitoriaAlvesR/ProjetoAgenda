@@ -37,6 +37,7 @@
             grpbAlterarSenha = new GroupBox();
             bttnAleteraSenha = new Button();
             txtVisorNovaSenha = new TextBox();
+            bttnAlterar = new Button();
             grpCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             grpbAlterarSenha.SuspendLayout();
@@ -45,13 +46,14 @@
             // grpCategoria
             // 
             grpCategoria.BackgroundImageLayout = ImageLayout.Stretch;
+            grpCategoria.Controls.Add(bttnAlterar);
             grpCategoria.Controls.Add(bttnExcluir);
             grpCategoria.Controls.Add(buttCadastrar);
             grpCategoria.Controls.Add(textVisor);
             grpCategoria.ForeColor = Color.White;
-            grpCategoria.Location = new Point(12, 12);
+            grpCategoria.Location = new Point(41, 35);
             grpCategoria.Name = "grpCategoria";
-            grpCategoria.Size = new Size(287, 143);
+            grpCategoria.Size = new Size(278, 177);
             grpCategoria.TabIndex = 0;
             grpCategoria.TabStop = false;
             grpCategoria.Text = "Insira o nome da nova categoria";
@@ -98,7 +100,7 @@
             dgvCategoria.BackgroundColor = Color.Black;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategoria.GridColor = Color.Black;
-            dgvCategoria.Location = new Point(354, 12);
+            dgvCategoria.Location = new Point(342, 52);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategoria.Size = new Size(260, 143);
@@ -110,9 +112,9 @@
             grpbAlterarSenha.Controls.Add(bttnAleteraSenha);
             grpbAlterarSenha.Controls.Add(txtVisorNovaSenha);
             grpbAlterarSenha.ForeColor = Color.White;
-            grpbAlterarSenha.Location = new Point(655, 15);
+            grpbAlterarSenha.Location = new Point(656, 52);
             grpbAlterarSenha.Name = "grpbAlterarSenha";
-            grpbAlterarSenha.Size = new Size(291, 137);
+            grpbAlterarSenha.Size = new Size(291, 143);
             grpbAlterarSenha.TabIndex = 2;
             grpbAlterarSenha.TabStop = false;
             grpbAlterarSenha.Text = "Alterar Senha";
@@ -122,20 +124,32 @@
             bttnAleteraSenha.BackColor = Color.Blue;
             bttnAleteraSenha.FlatStyle = FlatStyle.Flat;
             bttnAleteraSenha.ForeColor = Color.White;
-            bttnAleteraSenha.Location = new Point(14, 81);
+            bttnAleteraSenha.Location = new Point(14, 87);
             bttnAleteraSenha.Name = "bttnAleteraSenha";
-            bttnAleteraSenha.Size = new Size(260, 25);
+            bttnAleteraSenha.Size = new Size(262, 25);
             bttnAleteraSenha.TabIndex = 1;
             bttnAleteraSenha.Text = "Alterar Senha";
             bttnAleteraSenha.UseVisualStyleBackColor = false;
             // 
             // txtVisorNovaSenha
             // 
-            txtVisorNovaSenha.Location = new Point(14, 29);
+            txtVisorNovaSenha.Location = new Point(14, 39);
             txtVisorNovaSenha.Multiline = true;
             txtVisorNovaSenha.Name = "txtVisorNovaSenha";
             txtVisorNovaSenha.Size = new Size(262, 27);
             txtVisorNovaSenha.TabIndex = 0;
+            // 
+            // bttnAlterar
+            // 
+            bttnAlterar.BackColor = Color.Blue;
+            bttnAlterar.FlatStyle = FlatStyle.Flat;
+            bttnAlterar.Location = new Point(6, 135);
+            bttnAlterar.Name = "bttnAlterar";
+            bttnAlterar.Size = new Size(264, 25);
+            bttnAlterar.TabIndex = 3;
+            bttnAlterar.Text = "Alterar";
+            bttnAlterar.UseVisualStyleBackColor = false;
+            bttnAlterar.Click += bttnAlterar_Click;
             // 
             // FormCategoria
             // 
@@ -144,7 +158,7 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1013, 172);
+            ClientSize = new Size(993, 256);
             Controls.Add(grpbAlterarSenha);
             Controls.Add(dgvCategoria);
             Controls.Add(grpCategoria);
@@ -174,5 +188,6 @@
         private Button bttnExcluir;
         private Button bttnAleteraSenha;
         private TextBox txtVisorNovaSenha;
+        private Button bttnAlterar;
     }
 }

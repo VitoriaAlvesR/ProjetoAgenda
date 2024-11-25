@@ -47,7 +47,7 @@ namespace ProjetoAgenda.Views
 
         }
 
-        private void AtualizaDataGread ()
+        private void AtualizaDataGread()
         {
             //Comando para aprecer em lista no dgvCategoria
             CategoriaController controle = new CategoriaController();
@@ -59,7 +59,7 @@ namespace ProjetoAgenda.Views
 
         private void FormCategoria_Load(object sender, EventArgs e)
         {
-           AtualizaDataGread();
+            AtualizaDataGread();
         }
 
         private void bttnExcluir_Click(object sender, EventArgs e)
@@ -68,6 +68,16 @@ namespace ProjetoAgenda.Views
 
             CategoriaController categoriaController = new CategoriaController();
             categoriaController.DeleteTable(codigo);
+
+            AtualizaDataGread();
+        }
+
+        private void bttnAlterar_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvCategoria.SelectedRows[0].Cells[0].Value);
+
+            CategoriaController catecontroller = new CategoriaController();
+            catecontroller.AlterarTable(codigo);
 
             AtualizaDataGread();
         }
