@@ -28,7 +28,7 @@ namespace ProjetoAgenda.VariableGlobal
             set
             {
                 //Colocando as letras em maiúsculas
-                value = value.ToUpper();
+                //value = value.ToUpper();
                 _usuario = value;
 
                 //Comando para usar uma nova pasta

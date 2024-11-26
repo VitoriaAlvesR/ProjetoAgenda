@@ -16,7 +16,7 @@ namespace ProjetoAgenda.Views
         public FormPrincipal()
         {
             InitializeComponent();
-            lblMensage.Text = $"Olá, {UserSession.nome} ";
+            lblMensage.Text = $"Seja bem-vindo, {UserSession.nome} ";
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)

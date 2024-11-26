@@ -65,11 +65,11 @@ namespace ProjetoAgenda.Controller
             try
             {
                 //Criação da conexao, reutilizei ConexaoDB que já estava criada.
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario,UserSession.senha);
 
                 //SELECT - Retornar os dados.
-                string sql = @"SELECT codCategoria AS 'Código', nomeCategoria AS 'Categoria' FROM tbCategoria;
-                              ";
+                string sql = @"SELECT codCategoria AS 'Código', nomeCategoria AS 'Categoria' FROM tbCategoria
+                              WHERE usuario = User();";
 
                 //Abrindo Conexão.
                 conexao.Open();
@@ -108,7 +108,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando do SQL que será executado
-                string sql = @"";
+                string sql = @$"DELETE FROM  tbCategoria WHERE codCategoria = {codCategoria} ";
 
                 //Abrindo a conexão
                 conexao.Open();
@@ -143,40 +143,22 @@ namespace ProjetoAgenda.Controller
             }
         }
 
-        public DataTable AlterarTable (int codCategoria)
+        public DataTable AlterarTable (int codCategoria, string Category)
         {
             MySqlConnection conexao = null;
             try
             {
                 conexao = ConexaoDB.CriarConexao();
-                string sql =@"DELIMITER //
-                            CREATE TRIGGER trLogUpdateCategoria
-                            AFTER UPDATE  ON tbCategoria
-                            FOR EACH ROW
-                            BEGIN 
-	                            INSERT INTO logUsuario
-                                (
-                                usuario,
-                                horario,
-                                descricao
-                                )
-    
-                                VALUES
-                                (
-		                            USER(),
-                                    current_timestamp(),
-                                    CONCAT('A categoria', OLD.codCategoria,'foi alterada para', NEW.codCategoria)
-                                );
-    
-                            END;
-                            //
-                            DELIMITER ; ";
+                string sql =@$"UPDATE  tbCategoria 
+                               SET  nomeCategoria = '{Category}'
+                               WHERE codCategoria = @codigo ";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@codigo", codCategoria);
+                comando.Parameters.AddWithValue("@nomeCategoria", Category);
 
                 int linhasAfetadas = comando.ExecuteNonQuery();
 

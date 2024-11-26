@@ -56,7 +56,7 @@ namespace ProjetoAgenda
                 UserSession.senha = txtVisorSenha.Text;
                 UserSession.usuario = txtVisorUsuario.Text;
 
-                MessageBox.Show("Bem-vido a sua tela principal");
+                //MessageBox.Show("Bem-vido a sua tela principal");
 
                 this.Hide();
                 FormPrincipal formPrincipal = new FormPrincipal();

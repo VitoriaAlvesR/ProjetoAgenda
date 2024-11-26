@@ -36,6 +36,8 @@
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
             lblMensage = new Label();
+            comboCategoria = new ComboBox();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -97,14 +99,6 @@
             categoriaToolStripMenuItem.Text = "Ca&tegoria";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
-            // lblMensagem
-            // 
-            //lblMensagem.AutoSize = true;
-            //lblMensagem.Location = new Point(327, 51);
-            //lblMensagem.Name = "lblMensagem";
-            //lblMensagem.Size = new Size(0, 15);
-            //lblMensagem.TabIndex = 1;
-            // 
             // lblMensage
             // 
             lblMensage.AutoSize = true;
@@ -117,6 +111,29 @@
             lblMensage.TabIndex = 2;
             lblMensage.Click += lblMensage_Click;
             // 
+            // comboCategoria
+            // 
+            comboCategoria.BackColor = Color.White;
+            comboCategoria.Font = new Font("Sitka Display", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboCategoria.ForeColor = Color.Black;
+            comboCategoria.FormattingEnabled = true;
+            comboCategoria.Location = new Point(39, 127);
+            comboCategoria.Name = "comboCategoria";
+            comboCategoria.Size = new Size(162, 24);
+            comboCategoria.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Romantic", 12F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(39, 106);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 18);
+            label1.TabIndex = 4;
+            label1.Text = "Categorias";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -124,8 +141,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(comboCategoria);
             Controls.Add(lblMensage);
-            //Controls.Add(lblMensagem);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
@@ -146,5 +164,7 @@
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem categoriaToolStripMenuItem;
         private Label lblMensage;
+        private ComboBox comboCategoria;
+        private Label label1;
     }
 }

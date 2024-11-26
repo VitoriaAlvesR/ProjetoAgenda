@@ -142,6 +142,7 @@
             bttnAleteraSenha.TabIndex = 1;
             bttnAleteraSenha.Text = "Alterar Senha";
             bttnAleteraSenha.UseVisualStyleBackColor = false;
+            bttnAleteraSenha.Click += bttnAleteraSenha_Click;
             // 
             // txtVisorNovaSenha
             // 
@@ -150,6 +151,7 @@
             txtVisorNovaSenha.Name = "txtVisorNovaSenha";
             txtVisorNovaSenha.Size = new Size(262, 27);
             txtVisorNovaSenha.TabIndex = 0;
+            txtVisorNovaSenha.TextChanged += txtVisorNovaSenha_TextChanged;
             // 
             // FormCategoria
             // 

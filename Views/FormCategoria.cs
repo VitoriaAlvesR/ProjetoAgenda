@@ -76,10 +76,22 @@ namespace ProjetoAgenda.Views
         {
             int codigo = Convert.ToInt32(dgvCategoria.SelectedRows[0].Cells[0].Value);
 
+            string Category = textVisor.Text;
+
             CategoriaController catecontroller = new CategoriaController();
-            catecontroller.AlterarTable(codigo);
+            catecontroller.AlterarTable(codigo, Category);
 
             AtualizaDataGread();
+        }
+
+        private void txtVisorNovaSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnAleteraSenha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
