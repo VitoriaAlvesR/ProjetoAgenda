@@ -53,6 +53,9 @@ namespace ProjetoAgenda
             // Autorização de Usuário estar correto ou não
             if (resultado == true)
             {
+                UserSession.senha = txtVisorSenha.Text;
+                UserSession.usuario = txtVisorUsuario.Text;
+
                 MessageBox.Show("Bem-vido a sua tela principal");
 
                 this.Hide();
@@ -64,9 +67,8 @@ namespace ProjetoAgenda
                 MessageBox.Show("Usuário ou senha incorretos, tente novamente");
             }
 
-            UserSession.senha = txtVisorSenha.Text;
-            UserSession.nome = txtVisorUsuario.Text;
-            UserSession.usuario = txtVisorUsuario.Text; 
+
+            
             
         }
 

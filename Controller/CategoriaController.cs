@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoAgenda.Data;
+using ProjetoAgenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,7 @@ namespace ProjetoAgenda.Controller
 {
     internal class CategoriaController
     {
-        public bool AddCategoria(string nomeCatego)
+        public bool AddCategoria(string nomeCategoria)
         {
             MySqlConnection conexao = null;
             try
@@ -20,7 +21,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando do SQL que será executado
-                string sql = "INSERT INTO tbCategoria (nomeCatego) VALUES (@nomeCatego);";
+                string sql = "INSERT INTO tbCategoria (nomeCategoria) VALUES (@nomeCategoria);";
 
                 //Abrindo a conexão
                 conexao.Open();
@@ -30,7 +31,7 @@ namespace ProjetoAgenda.Controller
 
                 //Troca do valor dado pelos @ pelas informações que serão cadastradas
                 // Essas informações vieram dos parametros da função
-                comando.Parameters.AddWithValue("@nomeCatego", nomeCatego);
+                comando.Parameters.AddWithValue("@nomeCategoria", nomeCategoria);
 
                 //Execusão no banco de dados
                 int linhasAfetadas = comando.ExecuteNonQuery();
@@ -67,7 +68,8 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //SELECT - Retornar os dados.
-                string sql = "SELECT codCategoria AS 'Código', nomeCatego AS 'Categoria' FROM tbCategoria;";
+                string sql = @"SELECT codCategoria AS 'Código', nomeCategoria AS 'Categoria' FROM tbCategoria;
+                              ";
 
                 //Abrindo Conexão.
                 conexao.Open();
@@ -97,7 +99,7 @@ namespace ProjetoAgenda.Controller
             }
         }
 
-        public DataTable DeleteTable(int codCatego)
+        public DataTable DeleteTable(int codCategoria)
         {
             MySqlConnection conexao = null;
             try
@@ -106,35 +108,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando do SQL que será executado
-                string sql = @"CREATE TABLE logUsuario ( 
-	                        logID INT AUTO_INCREMENT PRIMARY KEY ,
-                            usuario VARCHAR (40) NOT NULL,
-                            horario DATETIME NOT NULL,
-                            descricao VARCHAR (80)
-                            );
-
-                            DELIMITER //
-                            CREATE TRIGGER trLogDeleteCategoria
-                            AFTER DELETE ON tbCategoria
-                            FOR EACH ROW
-                            BEGIN 
-	                            INSERT INTO logUsuario
-                                (
-                                usuario,
-                                horario,
-                                descricao
-                                )
-    
-                                VALUES
-                                (
-		                            USER(),
-                                    current_timestamp(),
-                                    CONCAT('A categoria', OLD.codCategoria,'foi excluida')
-                                );
-    
-                            END;
-                            //
-                            DELIMITER ;";
+                string sql = @"";
 
                 //Abrindo a conexão
                 conexao.Open();
@@ -144,7 +118,7 @@ namespace ProjetoAgenda.Controller
 
                 //Troca do valor dado pelos @ pelas informações que serão cadastradas
                 // Essas informações vieram dos parametros da função
-                comando.Parameters.AddWithValue("@codigo", codCatego);
+                comando.Parameters.AddWithValue("@codigo", codCategoria);
 
                 //Execusão no banco de dados
                 int linhasAfetadas = comando.ExecuteNonQuery();
@@ -169,7 +143,7 @@ namespace ProjetoAgenda.Controller
             }
         }
 
-        public DataTable AlterarTable (int codCatego)
+        public DataTable AlterarTable (int codCategoria)
         {
             MySqlConnection conexao = null;
             try
@@ -202,7 +176,7 @@ namespace ProjetoAgenda.Controller
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
-                comando.Parameters.AddWithValue("@codigo", codCatego);
+                comando.Parameters.AddWithValue("@codigo", codCategoria);
 
                 int linhasAfetadas = comando.ExecuteNonQuery();
 

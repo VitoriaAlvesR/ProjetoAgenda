@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             grpCategoria = new GroupBox();
+            bttnAlterar = new Button();
             bttnExcluir = new Button();
             buttCadastrar = new Button();
             textVisor = new TextBox();
@@ -37,7 +38,6 @@
             grpbAlterarSenha = new GroupBox();
             bttnAleteraSenha = new Button();
             txtVisorNovaSenha = new TextBox();
-            bttnAlterar = new Button();
             grpCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             grpbAlterarSenha.SuspendLayout();
@@ -57,6 +57,18 @@
             grpCategoria.TabIndex = 0;
             grpCategoria.TabStop = false;
             grpCategoria.Text = "Insira o nome da nova categoria";
+            // 
+            // bttnAlterar
+            // 
+            bttnAlterar.BackColor = Color.Blue;
+            bttnAlterar.FlatStyle = FlatStyle.Flat;
+            bttnAlterar.Location = new Point(6, 135);
+            bttnAlterar.Name = "bttnAlterar";
+            bttnAlterar.Size = new Size(264, 25);
+            bttnAlterar.TabIndex = 3;
+            bttnAlterar.Text = "Alterar Categoria";
+            bttnAlterar.UseVisualStyleBackColor = false;
+            bttnAlterar.Click += bttnAlterar_Click;
             // 
             // bttnExcluir
             // 
@@ -138,18 +150,6 @@
             txtVisorNovaSenha.Name = "txtVisorNovaSenha";
             txtVisorNovaSenha.Size = new Size(262, 27);
             txtVisorNovaSenha.TabIndex = 0;
-            // 
-            // bttnAlterar
-            // 
-            bttnAlterar.BackColor = Color.Blue;
-            bttnAlterar.FlatStyle = FlatStyle.Flat;
-            bttnAlterar.Location = new Point(6, 135);
-            bttnAlterar.Name = "bttnAlterar";
-            bttnAlterar.Size = new Size(264, 25);
-            bttnAlterar.TabIndex = 3;
-            bttnAlterar.Text = "Alterar";
-            bttnAlterar.UseVisualStyleBackColor = false;
-            bttnAlterar.Click += bttnAlterar_Click;
             // 
             // FormCategoria
             // 

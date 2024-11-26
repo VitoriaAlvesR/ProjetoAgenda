@@ -35,6 +35,7 @@
             editarToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
+            lblMensage = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,6 +97,26 @@
             categoriaToolStripMenuItem.Text = "Ca&tegoria";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
+            // lblMensagem
+            // 
+            //lblMensagem.AutoSize = true;
+            //lblMensagem.Location = new Point(327, 51);
+            //lblMensagem.Name = "lblMensagem";
+            //lblMensagem.Size = new Size(0, 15);
+            //lblMensagem.TabIndex = 1;
+            // 
+            // lblMensage
+            // 
+            lblMensage.AutoSize = true;
+            lblMensage.BackColor = Color.Transparent;
+            lblMensage.Font = new Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMensage.ForeColor = Color.White;
+            lblMensage.Location = new Point(201, 25);
+            lblMensage.Name = "lblMensage";
+            lblMensage.Size = new Size(0, 47);
+            lblMensage.TabIndex = 2;
+            lblMensage.Click += lblMensage_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -103,10 +124,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblMensage);
+            //Controls.Add(lblMensagem);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
             Text = "Principal";
+            Load += FormPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -121,5 +145,6 @@
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem categoriaToolStripMenuItem;
+        private Label lblMensage;
     }
 }

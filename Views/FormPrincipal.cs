@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoAgenda.VariableGlobal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace ProjetoAgenda.Views
         public FormPrincipal()
         {
             InitializeComponent();
+            lblMensage.Text = $"Olá, {UserSession.nome} ";
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,6 +34,18 @@ namespace ProjetoAgenda.Views
             this.Hide();
             FormCategoria form = new FormCategoria();
             form.ShowDialog();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            
+            
+
+        }
+
+        private void lblMensage_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
