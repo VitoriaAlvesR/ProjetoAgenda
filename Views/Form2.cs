@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoAgenda.Controller;
 using ProjetoAgenda.Data;
+using ProjetoAgenda.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,6 +93,13 @@ namespace ProjetoAgenda
             {
                 MessageBox.Show("Não foi possível cadastrar o usuário.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }

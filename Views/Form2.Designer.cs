@@ -44,6 +44,7 @@
             label7 = new Label();
             lblNaoSouRobo = new Label();
             checkConfirmar = new CheckBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // txtVisorNome
@@ -120,7 +121,7 @@
             lblTelefone.ForeColor = Color.White;
             lblTelefone.Location = new Point(67, 210);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(52, 15);
+            lblTelefone.Size = new Size(53, 15);
             lblTelefone.TabIndex = 6;
             lblTelefone.Text = "Telefone";
             // 
@@ -161,10 +162,11 @@
             // 
             // bttnCadastrar
             // 
-            bttnCadastrar.BackColor = SystemColors.Highlight;
+            bttnCadastrar.BackColor = Color.Blue;
             bttnCadastrar.Enabled = false;
             bttnCadastrar.FlatStyle = FlatStyle.Popup;
-            bttnCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCadastrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCadastrar.ForeColor = Color.White;
             bttnCadastrar.Location = new Point(67, 406);
             bttnCadastrar.Name = "bttnCadastrar";
             bttnCadastrar.Size = new Size(147, 23);
@@ -175,9 +177,10 @@
             // 
             // bttnCancelar
             // 
-            bttnCancelar.BackColor = SystemColors.Highlight;
+            bttnCancelar.BackColor = Color.Blue;
             bttnCancelar.FlatStyle = FlatStyle.Popup;
-            bttnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCancelar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCancelar.ForeColor = Color.White;
             bttnCancelar.Location = new Point(222, 406);
             bttnCancelar.Name = "bttnCancelar";
             bttnCancelar.Size = new Size(147, 23);
@@ -219,6 +222,20 @@
             checkConfirmar.UseVisualStyleBackColor = false;
             checkConfirmar.CheckedChanged += checkConfirmar_CheckedChanged;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Blue;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(299, 456);
+            button1.Name = "button1";
+            button1.Size = new Size(70, 22);
+            button1.TabIndex = 18;
+            button1.Text = "Voltar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,6 +243,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(439, 511);
+            Controls.Add(button1);
             Controls.Add(checkConfirmar);
             Controls.Add(lblNaoSouRobo);
             Controls.Add(label7);
@@ -243,7 +261,7 @@
             Controls.Add(txtVisorNome);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form2";
-            Text = "Tela de Cadastro";
+            Text = "Cadastro";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,5 +284,6 @@
         private CheckBox checkConfirma;
         private Label lblNaoSouRobo;
         private CheckBox checkConfirmar;
+        private Button button1;
     }
 }

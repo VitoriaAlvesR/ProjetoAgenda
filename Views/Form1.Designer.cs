@@ -60,10 +60,11 @@
             // 
             // bttnEntrar
             // 
-            bttnEntrar.BackColor = SystemColors.Highlight;
+            bttnEntrar.BackColor = Color.Blue;
             bttnEntrar.Enabled = false;
             bttnEntrar.FlatStyle = FlatStyle.Popup;
-            bttnEntrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnEntrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnEntrar.ForeColor = Color.White;
             bttnEntrar.Location = new Point(74, 207);
             bttnEntrar.Name = "bttnEntrar";
             bttnEntrar.Size = new Size(75, 23);
@@ -74,9 +75,10 @@
             // 
             // bttnCadastrar
             // 
-            bttnCadastrar.BackColor = SystemColors.Highlight;
+            bttnCadastrar.BackColor = Color.Blue;
             bttnCadastrar.FlatStyle = FlatStyle.Popup;
-            bttnCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCadastrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnCadastrar.ForeColor = Color.White;
             bttnCadastrar.Location = new Point(187, 207);
             bttnCadastrar.Name = "bttnCadastrar";
             bttnCadastrar.Size = new Size(75, 23);
@@ -124,7 +126,7 @@
             Controls.Add(txtVisorUsuario);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Login da agenda";
+            Text = "Login ";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

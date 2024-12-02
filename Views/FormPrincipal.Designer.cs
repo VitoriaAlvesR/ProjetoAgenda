@@ -35,6 +35,7 @@
             editarToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
+            contatosToolStripMenuItem = new ToolStripMenuItem();
             lblMensage = new Label();
             comboCategoria = new ComboBox();
             label1 = new Label();
@@ -84,10 +85,10 @@
             // cadastroToolStripMenuItem
             // 
             cadastroToolStripMenuItem.BackColor = Color.Black;
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem });
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, contatosToolStripMenuItem });
             cadastroToolStripMenuItem.ForeColor = Color.White;
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(121, 22);
+            cadastroToolStripMenuItem.Size = new Size(180, 22);
             cadastroToolStripMenuItem.Text = "&Cadastro";
             // 
             // categoriaToolStripMenuItem
@@ -95,9 +96,17 @@
             categoriaToolStripMenuItem.BackColor = Color.Black;
             categoriaToolStripMenuItem.ForeColor = Color.White;
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(125, 22);
+            categoriaToolStripMenuItem.Size = new Size(180, 22);
             categoriaToolStripMenuItem.Text = "Ca&tegoria";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
+            // 
+            // contatosToolStripMenuItem
+            // 
+            contatosToolStripMenuItem.BackColor = Color.Black;
+            contatosToolStripMenuItem.ForeColor = Color.White;
+            contatosToolStripMenuItem.Name = "contatosToolStripMenuItem";
+            contatosToolStripMenuItem.Size = new Size(180, 22);
+            contatosToolStripMenuItem.Text = "&Novo Contato";
             // 
             // lblMensage
             // 
@@ -126,11 +135,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Romantic", 12F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(39, 106);
+            label1.Location = new Point(39, 103);
             label1.Name = "label1";
-            label1.Size = new Size(75, 18);
+            label1.Size = new Size(88, 21);
             label1.TabIndex = 4;
             label1.Text = "Categorias";
             // 
@@ -166,5 +175,6 @@
         private Label lblMensage;
         private ComboBox comboCategoria;
         private Label label1;
+        private ToolStripMenuItem contatosToolStripMenuItem;
     }
 }

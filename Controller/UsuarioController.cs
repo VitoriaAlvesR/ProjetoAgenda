@@ -67,11 +67,11 @@ namespace ProjetoAgenda.Controller
         {
             try 
             {
-                MySqlConnection conexao = ConexaoDB.CriarConexao();
+                MySqlConnection conexao = ConexaoDB.CriarConexao(usuario,senha);
 
-                string sql = @"select nome,usuario,senha,telefone from tbUsuarios
-                                where usuario = @usuario
-                                and BINARY senha = @senha;";
+                string sql = $@"select nome,usuario,senha,telefone from tbUsuarios
+                                where usuario = '{usuario}'
+                                and BINARY senha = '{senha}';";
 
                 conexao.Open();
 

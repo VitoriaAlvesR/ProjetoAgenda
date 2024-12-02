@@ -28,6 +28,7 @@ namespace ProjetoAgenda.Views
             {
                 MessageBox.Show("Cadastro da categoria efetuado com sucessso");
 
+
             }
             else
             {
@@ -92,6 +93,13 @@ namespace ProjetoAgenda.Views
         private void bttnAleteraSenha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.ShowDialog();
         }
     }
 }

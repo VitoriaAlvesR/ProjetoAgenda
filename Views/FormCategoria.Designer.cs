@@ -38,6 +38,7 @@
             grpbAlterarSenha = new GroupBox();
             bttnAleteraSenha = new Button();
             txtVisorNovaSenha = new TextBox();
+            bttnVoltar = new Button();
             grpCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             grpbAlterarSenha.SuspendLayout();
@@ -61,7 +62,7 @@
             // bttnAlterar
             // 
             bttnAlterar.BackColor = Color.Blue;
-            bttnAlterar.FlatStyle = FlatStyle.Flat;
+            bttnAlterar.FlatStyle = FlatStyle.Popup;
             bttnAlterar.Location = new Point(6, 135);
             bttnAlterar.Name = "bttnAlterar";
             bttnAlterar.Size = new Size(264, 25);
@@ -74,7 +75,7 @@
             // 
             bttnExcluir.BackColor = Color.Blue;
             bttnExcluir.BackgroundImageLayout = ImageLayout.Center;
-            bttnExcluir.FlatStyle = FlatStyle.Flat;
+            bttnExcluir.FlatStyle = FlatStyle.Popup;
             bttnExcluir.Location = new Point(6, 103);
             bttnExcluir.Name = "bttnExcluir";
             bttnExcluir.Size = new Size(264, 26);
@@ -87,7 +88,7 @@
             // 
             buttCadastrar.BackColor = Color.Blue;
             buttCadastrar.BackgroundImageLayout = ImageLayout.Center;
-            buttCadastrar.FlatStyle = FlatStyle.Flat;
+            buttCadastrar.FlatStyle = FlatStyle.Popup;
             buttCadastrar.Location = new Point(6, 71);
             buttCadastrar.Name = "buttCadastrar";
             buttCadastrar.Size = new Size(264, 26);
@@ -134,7 +135,8 @@
             // bttnAleteraSenha
             // 
             bttnAleteraSenha.BackColor = Color.Blue;
-            bttnAleteraSenha.FlatStyle = FlatStyle.Flat;
+            bttnAleteraSenha.FlatStyle = FlatStyle.Popup;
+            bttnAleteraSenha.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bttnAleteraSenha.ForeColor = Color.White;
             bttnAleteraSenha.Location = new Point(14, 87);
             bttnAleteraSenha.Name = "bttnAleteraSenha";
@@ -153,6 +155,20 @@
             txtVisorNovaSenha.TabIndex = 0;
             txtVisorNovaSenha.TextChanged += txtVisorNovaSenha_TextChanged;
             // 
+            // bttnVoltar
+            // 
+            bttnVoltar.BackColor = Color.Blue;
+            bttnVoltar.FlatStyle = FlatStyle.Popup;
+            bttnVoltar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnVoltar.ForeColor = Color.White;
+            bttnVoltar.Location = new Point(878, 217);
+            bttnVoltar.Name = "bttnVoltar";
+            bttnVoltar.Size = new Size(69, 27);
+            bttnVoltar.TabIndex = 3;
+            bttnVoltar.Text = "Voltar";
+            bttnVoltar.UseVisualStyleBackColor = false;
+            bttnVoltar.Click += bttnVoltar_Click;
+            // 
             // FormCategoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -161,6 +177,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(993, 256);
+            Controls.Add(bttnVoltar);
             Controls.Add(grpbAlterarSenha);
             Controls.Add(dgvCategoria);
             Controls.Add(grpCategoria);
@@ -191,5 +208,6 @@
         private Button bttnAleteraSenha;
         private TextBox txtVisorNovaSenha;
         private Button bttnAlterar;
+        private Button bttnVoltar;
     }
 }

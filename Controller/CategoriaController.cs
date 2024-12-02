@@ -18,7 +18,7 @@ namespace ProjetoAgenda.Controller
             try
             {
                 //Criando a conexão, estou utilizando a classe ConexaoDB que esta dentro da pasta DATA
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario,UserSession.senha); 
 
                 //Comando do SQL que será executado
                 string sql = "INSERT INTO tbCategoria (nomeCategoria) VALUES (@nomeCategoria);";
@@ -105,7 +105,7 @@ namespace ProjetoAgenda.Controller
             try
             {
                 //Criando a conexão, estou utilizando a classe ConexaoDB que esta dentro da pasta DATA
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario,UserSession.senha);
 
                 //Comando do SQL que será executado
                 string sql = @$"DELETE FROM  tbCategoria WHERE codCategoria = {codCategoria} ";
@@ -148,7 +148,7 @@ namespace ProjetoAgenda.Controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario,UserSession.senha);
                 string sql =@$"UPDATE  tbCategoria 
                                SET  nomeCategoria = '{Category}'
                                WHERE codCategoria = @codigo ";
