@@ -173,7 +173,7 @@ namespace ProjetoAgenda.Controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show($"Erro ao excluir categoria: {erro.Message}");
+                MessageBox.Show($"Erro ao alterar categoria: {erro.Message}");
                 return new DataTable();
             }
             finally
